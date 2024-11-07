@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal - Érike Augusto de Sousa Resende</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Resetando estilos para manter consistência */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo básico da página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Cabeçalho e Navegação */
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 15px 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #66fcf1;
+        }
+
+        /* Estilos para as seções */
+        .section {
+            padding: 60px 10%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Seção principal (Início) */
+        .home-section {
+            background: linear-gradient(135deg, #222, #444);
+            color: #fff;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #66fcf1;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #45a29e;
+            margin-top: 10px;
+        }
+
+        .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid #66fcf1;
+        object-fit: cover;
+        position: relative;
+        animation: wave 1.5s infinite;
+        }
+
+        @keyframes wave {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(102, 252, 241, 0.7);
+        }
+        50% {
+            box-shadow: 0 0 15px 10px rgba(102, 252, 241, 0);
+        }
+        }
+        /* Estilos para as seções de experiência e descrição */
+        .about-item, .experience-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        /* Estilo para o carrossel */
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .carousel-item.active {
+            display: flex;
+        }
+
+        /* Animação do carrossel */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: rotateY(-10deg); }
+            to { opacity: 1; transform: rotateY(0); }
+        }
+
+        .carousel-item video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .carousel-controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .carousel-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        header nav ul li a {
+        color: #eee;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s, transform 0.3s; /* Adiciona uma transição de transformação */
+        }
+
+        header nav ul li a:hover {
+        color: #66fcf1;
+        transform: scale(1.1); /* Aumenta o tamanho do link ao passar o mouse */
+        }
+
+
+        .carousel-button:hover {
+            background-color: #66fcf1;
+            transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+        }
+
+        /* Adicionando o cursor de digitação */
+        #typing-text {
+        display: inline-block;
+        font-family: 'Courier New', Courier, monospace; /* Fonte de monoespaço */
+        font-size: 1.3rem;
+        white-space: nowrap; /* Para que o texto não quebre a linha */
+        overflow: hidden; /* Esconde o conteúdo extra enquanto digita */
+        border-right: 2px solid #66fcf1; /* Simula o cursor de digitação */
+        padding-right: 5px; /* Espaço à direita do texto */
+        }
+
+
+        /* Formulário de contato */
+        form {
+            max-width: 600px;
+            background: #fff;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #66fcf1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #eee;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section home-section">
+        <img src="perfil.jpeg" alt="Foto de Perfil" class="profile-pic">
+        <h1>Érike Augusto de Sousa Resende</h1>
+        <p class="subtitle" id="typing-text"></p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>Sobre Mim</h2>
+        <div class="about-item">
+            <p>Formado em Educação Física e cursando Análise e Desenvolvimento de Sistemas. Busco unir conhecimento técnico e habilidades de ensino para desenvolver soluções que aprimorem a experiência do usuário.</p>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <h2>Experiência</h2>
+        <div class="experience-item">
+            <h3>Técnico de Suporte de TI N1</h3>
+            <p class="experience-date">Novembro de 2023 - Presente</p>
+            <ul>
+                <li>Instalação e configuração de hardware/software.</li>
+                <li>Suporte técnico ao usuário final.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projetos</h2>
+        <div class="carousel-container">
+            <div class="carousel-item active">
+                <h3>Controle de Estoque - ESTOQUEI</h3>
+                <video controls><source src="estoquei_video.mp4" type="video/mp4"></video>
+                <p>Sistema de gestão de estoque em Python e SQLite.</p>
+            </div>
+            <div class="carousel-item">
+                <h3>Controle de Clínica - MEDIQUEI</h3>
+                <video controls><source src="mediquei_video.mp4" type="video/mp4"></video>
+                <p>Gestão de clínicas em Python e PostgreSQL.</p>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-button" onclick="prevProject()">Anterior</button>
+            <button class="carousel-button" onclick="nextProject()">Próximo</button>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contato</h2>
+        <form action="mailto: erike2000augusto@gmail.com" method="post" enctype="text/plain">
+            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+            <input type="email" id="email" name="email" placeholder="Seu email" required>
+            <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Érike Augusto de Sousa Resende. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0; // Initialize currentIndex
+    
+        const projects = [
+            {
+                title: "Controle de Estoque - ESTOQUEI",
+                videoSrc: "estoquei_video.mp4",
+                description: "Sistema de gestão de estoque desenvolvido em Python e SQLite."
+            },
+            {
+                title: "Controle de Clínica - MEDIQUEI",
+                videoSrc: "mediquei_video.mp4",
+                description: "Sistema de gestão de clínicas desenvolvido em Python e PostgreSQL."
+            },
+            // Add more project objects here
+        ];
+    
+        function renderProjects() {
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.innerHTML = ''; // Clear existing items
+    
+            projects.forEach((project, index) => {
+                const item = document.createElement('div');
+                item.classList.add('carousel-item');
+                item.style.display = index === currentIndex ? 'block' : 'none';
+                item.innerHTML = `
+                    <h3>${project.title}</h3>
+                    <video controls>
+                        <source src="${project.videoSrc}" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                    <p>${project.description}</p>
+                `;
+                carouselContainer.appendChild(item);
+            });
+        }
+    
+        function showProject(index) {
+            const items = document.querySelectorAll('.carousel-item');
+            items.forEach((item, i) => {
+                item.style.display = i === index ? 'block' : 'none';
+            });
+        }
+    
+        function nextProject() {
+            currentIndex = (currentIndex + 1) % projects.length;
+            showProject(currentIndex);
+        }
+    
+        function prevProject() {
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            showProject(currentIndex);
+        }
+    
+        renderProjects();
+        showProject(currentIndex);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const textElement = document.getElementById("typing-text");
+        const text = "Analista de suporte | Python | JS | HTML | CSS | Dev Full Stack";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);  // Atraso entre cada caractere (100ms)
+            }
+        }
+
+        type();
+    });
+
+    </script>
+</body>
+<script src="script.js"></script>
+</html>

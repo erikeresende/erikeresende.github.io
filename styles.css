@@ -1,0 +1,261 @@
+/* Geral */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #2C3E50;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Adicionado para remover margens padrão */
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4b84bd;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+/* Home */
+.home-section {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.profile-container {
+    display: inline-block;
+    position: relative;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #2C3E50;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #7F8C8D;
+}
+
+/* Seções */
+.section {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #34495E;
+}
+
+.section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #747272;
+}
+
+/* Projetos */
+.project-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    flex: 1 1 48%; /* Flexível para melhor responsividade */
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Adicionado para espaçamento inferior */
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+}
+
+.project-item video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Formulário de Contato */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+form label {
+    font-size: 1.1rem;
+    color: #34495E;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #BDC3C7;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #34495E;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2C3E50;
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    font-size: 1rem;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.carousel-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: slideIn 0.5s ease forwards; /* Adiciona a animação de entrada */
+}
+
+.carousel-item.active {
+    display: flex;
+}
+
+.section {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(20px); /* Move as seções para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+
+.section.visible {
+    opacity: 1; /* Torna a seção visível */
+    transform: translateY(0); /* Retorna à posição original */
+}
+
+/* Animações de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animação para as seções */
+.section {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Animação para o carrossel */
+.carousel-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.carousel-item.active {
+    display: flex;
+}
+
+/* Transições em botões */
+.carousel-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: #66fcf1;
+    transform: scale(1.05); /* Aumenta ligeiramente o botão ao passar o mouse */
+}
+
+/* Transições em links de navegação */
+header nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #66fcf1;
+    transform: translateY(-2px); /* Eleva ligeiramente o link ao passar o mouse */
+}
+
+/* Transição em vídeos */
+.carousel-item video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.carousel-item video:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o vídeo ao passar o mouse */
+}
