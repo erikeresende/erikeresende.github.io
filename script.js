@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Parar de observar a seção após a animação
+                observer.unobserve(entry.target); // Parar de observar após a animação
             }
         });
     }
@@ -113,15 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevButton) {
         prevButton.addEventListener('click', () => changeCarouselIndex(-1));
     }
-});
 
-// Selecionando os elementos do HTML
-const hamburger = document.getElementById('hamburger');
-const navList = document.getElementById('nav-list');
+    // --- Funções de Navegação ---
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
 
-// Adicionando evento de clique no hambúrguer
-hamburger.addEventListener('click', () => {
-    // Alterna a classe 'active' para o menu e o hambúrguer
-    navList.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
 });

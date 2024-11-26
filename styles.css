@@ -47,6 +47,8 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    list-style: none;
+    padding-left: 0;
 }
 
 nav a {
@@ -83,6 +85,7 @@ nav a:focus {
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
 .profile-pic:hover {
     transform: scale(1.20);
     box-shadow: 0 6px 12px rgba(0, 255, 0, 0.4);
@@ -115,7 +118,6 @@ nav a:focus {
     }
 }
 
-
 .visible {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -123,8 +125,8 @@ nav a:focus {
 
 /* Sobre */
 .section-background {
-    max-width: 100%; /* Largura máxima da seção */
-    margin: 50px; /* Centraliza a seção na página */
+    max-width: 100%;
+    margin: 50px auto;
     background-color: #1c1c1c;
     border-radius: 8px;
     padding: 2rem;
@@ -136,13 +138,11 @@ h2 {
     margin-bottom: 1rem;
 }
 
-
 /* Experiência */
 .experience-item {
-    margin-bottom: 2rem;    
-    max-width: 100%; /* Largura máxima da seção */
-    margin: 50px; /* Centraliza a seção na página */
-    background-color: #2c2c2c;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    margin: 50px auto;
     background-color: #2c2c2c;
     padding: 1rem;
     border-radius: 8px;
@@ -171,7 +171,6 @@ h2 {
     gap: 2rem;
     overflow: hidden;
     position: relative;
-    
 }
 
 .carousel-item {
@@ -179,29 +178,27 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 500px; /* Largura fixa */
-    height: 500px; /* Altura fixa */
+    width: 500px;
+    height: 500px;
     background-color: #2c2c2c;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 1rem;
     opacity: 0.9;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    margin: 0 auto; /* Centraliza os itens */
+    margin: 0 auto;
 }
 
 .carousel-item.active {
     transform: scale(1.05);
-    opacity: 1; /* Garantir que o item ativo tenha opacidade total */
-
+    opacity: 1;
 }
 
 .carousel-item video {
-    max-width: 90%; /* Reduz o tamanho dos vídeos/imagens */
-    max-height: 500px; /* Limita a altura */
+    max-width: 90%;
+    max-height: 500px;
     border-radius: 8px;
-    object-fit: cover; /* Mantém a proporção */
-
+    object-fit: cover;
 }
 
 .carousel-controls {
@@ -219,24 +216,24 @@ h2 {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    z-index: 10; /* Garantir que o botão esteja visível */
+    z-index: 10;
 }
+
 .section-projetos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%; /* Largura máxima da seção */
-    margin: 50px; /* Centraliza a seção na página */
+    max-width: 100%;
+    margin: 50px auto;
     background-color: #2c2c2c;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
 }
 
 .carousel-item:hover {
-    transform: scale(1.00);
+    transform: scale(1.0);
     box-shadow: 0 6px 12px rgba(0, 255, 0, 0.4);
 }
 
@@ -256,9 +253,8 @@ h2 {
 
 .project-link:hover {
     background-color: #ffffff;
-    color: black
+    color: black;
 }
-
 
 .carousel-button:hover {
     background-color: #ffffff;
@@ -267,14 +263,13 @@ h2 {
 
 .carousel-item video,
 .carousel-item img {
-    max-width: 90%; /* Reduz o tamanho dos vídeos/imagens */
+    max-width: 90%;
     width: 1000px;
     height: 1000px;
-    max-height: 90%; /* Limita a altura */
+    max-height: 90%;
     border-radius: 8px;
-    object-fit: cover; /* Mantém a proporção */
+    object-fit: cover;
 }
-
 
 /* Contato */
 form input,
@@ -321,242 +316,46 @@ footer {
 }
 
 .social-links a img {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    width: 30px;
     height: auto;
-    border-radius: 50%; /* Torna os ícones redondos */
-    background-color: #fff; /* Adiciona um fundo claro para contraste */
-    padding: 5px; /* Espaçamento interno para o fundo */
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Adiciona sombra suave para destaque */
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .social-links a img:hover {
-    transform: scale(1.1); /* Efeito de zoom no hover */
-    background-color: #00FF00; /* Altera o fundo para o verde no hover */
-    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.6); /* Altera a sombra ao passar o mouse */
+    transform: scale(1.1);
+    background-color: #00FF00;
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.6);
 }
-
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .home-section {
-        gap: 1rem;
-    }
-
-    .carousel-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .carousel-item {
-        min-width: 100%;
-        margin-bottom: 2rem;
-    }
-    /* Modificando o tamanho da fonte e a aparência do header */
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-
-.experience-item,
-.carousel-item {
-    /* min-height: 250px; Tamanho mínimo ajustável */
-    margin: 1rem;
-}
-
-/* Estilo padrão para caixas de fundo */
-.section-box {
-    background-color: #2c2c2c; /* Cinza mais claro */
-    padding: 1.5rem;
-    margin: 2rem auto;
-    border-radius: 8px;
-    max-width: 800px; /* Mesmo tamanho */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center; /* Centraliza o conteúdo */
-}
-
-#sobre-mim .section-box,
-#projetos .section-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Ajustando o layout da página para dispositivos móveis */
-@media (max-width: 768px) {
-    html {
-        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
-    }
-
-    body {
-        font-size: 1rem; /* Reduz a fonte para uma melhor leitura */
-    }
-
     header {
-        padding: 1rem; /* Reduz o padding do header */
-    }
-
-    nav ul {
-        flex-direction: column; /* Menu vertical para dispositivos móveis */
-        gap: 1rem;
-    }
-
-    nav a {
-        font-size: 1rem; /* Fontes menores para links */
-        padding: 0.5rem;
-    }
-
-    /* Ajustando o layout das seções para ficarem mais compactas */
-    .section {
-        padding: 2rem 1rem; /* Menos espaço nas seções */
-    }
-
-    .home-section {
-        gap: 1rem;
-        padding: 2rem; /* Reduzindo o padding da home-section */
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
-    }
-
-    .subtitle {
-        font-size: 1.2rem; /* Ajuste do tamanho da fonte do subtítulo */
-    }
-
-    h1 {
-        font-size: 1.8rem; /* Ajusta o tamanho do título */
-    }
-
-    h2 {
-        font-size: 1.5rem; /* Ajusta o título da seção sobre */
-    }
-
-    .carousel-container {
-        flex-direction: column; /* Carousel em coluna */
-        align-items: center;
-    }
-
-    .carousel-item {
-        width: 100%; /* Ajusta o tamanho do item do carousel */
-        margin-bottom: 1rem; /* Ajusta o espaçamento */
-    }
-
-    .project-link {
-        width: 100%; /* Ajusta o tamanho do link do projeto */
         padding: 1rem;
     }
-}
 
+    .section {
+        padding: 3rem 1rem;
+    }
 
-.carousel-item img,
-.carousel-item video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: contain; /* Garante que a imagem ou vídeo não distorçam */
-}
+    .carousel-item {
+        width: 90%;
+        height: auto;
+    }
 
-/* Estilos do Menu */
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* Estilo do menu responsivo */
-nav .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-nav .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #00FF00;
-    transition: all 0.3s ease;
-}
-
-/* Esconde o menu em telas pequenas */
-.nav-list {
-    display: flex;
-}
-
-/* Estilo para os itens do menu */
-nav a {
-    color: #E0E0E0;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover,
-nav a:focus {
-    background-color: #00FF00;
-    color: white;
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
+    .carousel-container {
         flex-direction: column;
-        gap: 1rem;
-        background-color: #1f1f1f;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
     }
 
-    .hamburger {
-        display: flex;
+    .profile-pic {
+        width: 120px;
+        height: 120px;
     }
 
-    nav ul.active {
-        display: flex;
-    }
-
-    /* Transições para a animação do hambúrguer */
-    .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg);
-        position: relative;
-        top: 10px;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg);
-        position: relative;
-        top: -10px;
+    .social-links {
+        flex-direction: column;
     }
 }
