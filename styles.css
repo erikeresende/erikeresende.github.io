@@ -474,7 +474,3 @@ footer {
     object-fit: contain; /* Garante que a imagem ou vídeo não distorçam */
 }
 
-.profile-pic {
-    width: 100%; /* Faz a imagem da profile pic ocupar a largura da tela */
-    height: auto;
-}
