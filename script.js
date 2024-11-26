@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // --- Funções de UI/UX ---
-
-    // Adiciona a classe "visible" quando a seção entra na viewport
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -12,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Inicia a animação de digitação
-    function startTypingEffect(elementId, text, typingSpeed = 100, restartDelay = 2000) {
+    function startTypingEffect(elementId, text, typingSpeed = 100) {
         const textElement = document.getElementById(elementId);
-        if (!textElement) return;  // Verifica se o elemento existe
+        if (!textElement) return; // Verifica se o elemento existe
         let index = 0;
 
         function type() {
@@ -23,56 +19,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 textElement.textContent += text.charAt(index);
                 index++;
                 setTimeout(type, typingSpeed);
-            } else {
-                setTimeout(() => {
-                    index = 0;
-                    textElement.textContent = "";
-                    type();
-                }, restartDelay);
             }
         }
         type();
     }
 
     // --- Funções do Carrossel ---
-
     let currentIndex = 0;
     const projects = [
-        { title: "Controle de Estoque - ESTOQUEI", videoSrc: "estoquei_video.mp4", description: "Sistema de gestão de estoque em Python e SQLite." },
-        { title: "Controle de Clínica - MEDIQUEI", videoSrc: "mediquei_video.mp4", description: "Gestão de clínicas médicas em Python e PostgreSQL." }
+        {
+            title: "Controle de Estoque - ESTOQUEI",
+            videoSrc: "estoquei_video.mp4",
+            description: "Sistema de gestão de estoque em Python e SQLite.",
+            link: "https://github.com/erikeresende/estoquei"
+        },
+        {
+            title: "Controle de Clínica - MEDIQUEI",
+            videoSrc: "mediquei_video.mp4",
+            description: "Gestão de clínicas médicas em Python e PostgreSQL.",
+            link: "https://github.com/erikeresende/mediquei"
+        },
+        {
+            title: "Aplicativo de Entregas - CorreAqui",
+            imageSrc: "correaqui.png",
+            description: "Design Figma para aplicativo de entregas.",
+            link: "https://www.figma.com/proto/tlLZkDkfo5rk3NEl2eYKGG/CorreAqui?node-id=2016-590&node-type=frame&t=ybGxXsxmfUeAt3Q6-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1"
+        }
     ];
 
-    function renderProjectCarousel(currentIndex) {
+    function renderProjectCarousel() {
         const carouselContainer = document.querySelector('.carousel-container');
-        if (!carouselContainer) return;  // Verifica se o container existe
-        carouselContainer.innerHTML = ''; // Limpa o conteúdo existente
+        if (!carouselContainer) return;
 
-        // Cria os itens do carrossel
-        projects.forEach((project, index) => {
-            const item = document.createElement('div');
-            item.classList.add('carousel-item');
-            if (index === currentIndex) {
-                item.classList.add('active');
-            }
-            item.innerHTML = `
-                <h3>${project.title}</h3>
-                <video controls>
+        const project = projects[currentIndex];
+        const mediaContent = project.videoSrc
+            ? `<video controls>
                     <source src="${project.videoSrc}" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
-                </video>
+               </video>`
+            : `<img src="${project.imageSrc}" alt="${project.title}" class="carousel-image">`;
+
+        // Atualiza o conteúdo do carrossel para exibir apenas um projeto
+        carouselContainer.innerHTML = `
+            <div class="carousel-item active">
+                <h3>${project.title}</h3>
+                ${mediaContent}
                 <p>${project.description}</p>
-            `;
-            carouselContainer.appendChild(item);
-        });
+                <a href="${project.link}" target="_blank" class="project-link">Acessar Projeto</a>
+            </div>
+        `;
     }
 
     function changeCarouselIndex(direction) {
         currentIndex = (currentIndex + direction + projects.length) % projects.length;
-        renderProjectCarousel(currentIndex);
+        renderProjectCarousel();
     }
 
     // --- Funções de Observação ---
-
     function observeSections(sections) {
         const options = {
             root: null,
@@ -81,39 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const observer = new IntersectionObserver(handleIntersection, options);
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => observer.observe(section));
     }
 
     // --- Início do Código ---
-
-    // Inicia o efeito de digitação
     startTypingEffect("typing-text", "Analista de suporte | Python | JS | HTML | CSS | Dev Full Stack");
 
-    // Inicia a observação das seções
     const sections = document.querySelectorAll('.section');
     if (sections.length > 0) {
         observeSections(sections);
     }
 
-    // Renderiza o carrossel inicial
-    renderProjectCarousel(currentIndex);
+    renderProjectCarousel();
 
-    // Funções para controle do carrossel
     const nextButton = document.querySelector(".carousel-button-next");
     const prevButton = document.querySelector(".carousel-button-prev");
 
     if (nextButton) {
-        nextButton.addEventListener('click', () => {
-            changeCarouselIndex(1);
-        });
+        nextButton.addEventListener('click', () => changeCarouselIndex(1));
     }
 
     if (prevButton) {
-        prevButton.addEventListener('click', () => {
-            changeCarouselIndex(-1);
-        });
+        prevButton.addEventListener('click', () => changeCarouselIndex(-1));
     }
-
 });

@@ -31,7 +31,7 @@
     <section id="home" class="section home-section">
         <img src="perfil.jpeg" alt="Foto de perfil de Érike Augusto de Sousa Resende" class="profile-pic">
         <h1>Érike Augusto de Sousa Resende</h1>
-        <p class="subtitle" id="typing-text" aria-live="polite">Desenvolvedor Full Stack | Python | JS | HTML | CSS | DevOps</p>
+        <p class="subtitle" id="typing-text" aria-live="polite"></p>
     </section>
 
     <section id="about" class="section section-background">
@@ -51,7 +51,7 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section-projetos">
         <h2>Projetos</h2>
         <div class="carousel-container">
             <div class="carousel-item active">
@@ -70,12 +70,21 @@
                 </video>
                 <p>Sistema de gestão de clínicas médicas em Python e PostgreSQL.</p>
             </div>
-            <div class="carousel-controls">
-                <button class="carousel-button" onclick="changeCarouselIndex(-1)">Anterior</button>
-                <button class="carousel-button" onclick="changeCarouselIndex(1)">Próximo</button>                
-            </div>
+            <div class="carousel-item">
+                <h3>Aplicativo de Entregas - CorreAqui</h3>
+                <img class="figma-responsive" controls>
+                    <source src="correaqui.png" type="image/png">
+                    Seu navegador não suporta o formato de vídeo.
+            </img>
+                <p>Design Figma para aplicativo de entregas.</p>
+            </div>  
         </div>
+        <div class="carousel-controls">
+            <button class="carousel-button carousel-button-prev">Anterior</button>
+            <button class="carousel-button carousel-button-next">Próximo</button>
+        </div>        
     </section>
+
 
     <section id="contact" class="section section-background">
         <h2>Contato</h2>
@@ -90,12 +99,19 @@
     <footer>
         <p>&copy; 2024 Érike Augusto de Sousa Resende. Todos os direitos reservados.</p>
         <div class="social-links">
+
+            <a href="https://wa.me/5531998991686?text=Ol%C3%A1,%20tudo%20bem?" target="_blank">
+                <img src="whatsapp-icon.svg" alt="Ícone Whatsapp">
+            </a>
+
             <a href="https://www.linkedin.com/in/erikeresende/" target="_blank">
                 <img src="linkedin-icon.svg" alt="Ícone LinkedIn">
             </a>
+            
             <a href="https://github.com/erikeresende/" target="_blank">
                 <img src="github-icon.svg" alt="Ícone GitHub">
             </a>
+
         </div>
     </footer>
     
