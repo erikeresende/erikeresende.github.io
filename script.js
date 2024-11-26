@@ -114,3 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
         prevButton.addEventListener('click', () => changeCarouselIndex(-1));
     }
 });
+
+// Selecionando os elementos do HTML
+const hamburger = document.getElementById('hamburger');
+const navList = document.getElementById('nav-list');
+
+// Adicionando evento de clique no hambúrguer
+hamburger.addEventListener('click', () => {
+    // Alterna a classe 'active' para o menu e o hambúrguer
+    navList.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});

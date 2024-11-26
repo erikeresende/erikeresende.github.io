@@ -474,3 +474,89 @@ footer {
     object-fit: contain; /* Garante que a imagem ou vídeo não distorçam */
 }
 
+/* Estilos do Menu */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Estilo do menu responsivo */
+nav .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+nav .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #00FF00;
+    transition: all 0.3s ease;
+}
+
+/* Esconde o menu em telas pequenas */
+.nav-list {
+    display: flex;
+}
+
+/* Estilo para os itens do menu */
+nav a {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #00FF00;
+    color: white;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #1f1f1f;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Transições para a animação do hambúrguer */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
+}
