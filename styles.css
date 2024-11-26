@@ -398,18 +398,83 @@ footer {
     align-items: center;
 }
 
-/* RESPONSIVIDADE
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
-            gap: 1rem;
-        }
+/* Ajustando o layout da página para dispositivos móveis */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+    }
 
-        .section {
-            padding: 2rem 1rem;
-        }
+    body {
+        font-size: 1rem; /* Reduz a fonte para uma melhor leitura */
+    }
 
-        .carousel-container {
-            grid-template-columns: 1fr;
-        }
-    } */
+    header {
+        padding: 1rem; /* Reduz o padding do header */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu vertical para dispositivos móveis */
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 1rem; /* Fontes menores para links */
+        padding: 0.5rem;
+    }
+
+    /* Ajustando o layout das seções para ficarem mais compactas */
+    .section {
+        padding: 2rem 1rem; /* Menos espaço nas seções */
+    }
+
+    .home-section {
+        gap: 1rem;
+        padding: 2rem; /* Reduzindo o padding da home-section */
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Ajuste do tamanho da fonte do subtítulo */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajusta o título da seção sobre */
+    }
+
+    .carousel-container {
+        flex-direction: column; /* Carousel em coluna */
+        align-items: center;
+    }
+
+    .carousel-item {
+        width: 100%; /* Ajusta o tamanho do item do carousel */
+        margin-bottom: 1rem; /* Ajusta o espaçamento */
+    }
+
+    .project-link {
+        width: 100%; /* Ajusta o tamanho do link do projeto */
+        padding: 1rem;
+    }
+}
+
+
+.carousel-item img,
+.carousel-item video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* Garante que a imagem ou vídeo não distorçam */
+}
+
+.profile-pic {
+    width: 100%; /* Faz a imagem da profile pic ocupar a largura da tela */
+    height: auto;
+}
