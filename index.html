@@ -6,23 +6,23 @@
     <meta name="description" content="Portfólio de Érike Augusto de Sousa Resende, desenvolvedor Full Stack especializado em Python, JavaScript, HTML, CSS, e muito mais.">
     <meta name="author" content="Érike Augusto de Sousa Resende">
     <meta name="keywords" content="portfólio, desenvolvedor, frontend, full stack, Python, JavaScript, HTML, CSS, projetos">
-    <title>Portfólio Pessoal - Érike Augusto de Sousa Resende</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Portfólio de Érike Augusto de Sousa Resende">
     <meta property="og:description" content="Portfólio de Érike Augusto, desenvolvedor Full Stack. Veja os meus projetos e experiências profissionais.">
     <meta property="og:image" content="perfil.jpeg">
     <meta property="og:url" content="https://erikeresende.github.io">
+    <title>Portfólio Pessoal - Érike Augusto de Sousa Resende</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav>
-            <div class="hamburger" id="hamburger" aria-label="Menu de navegação">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-list" id="nav-list">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Sobre</a></li>
@@ -32,89 +32,91 @@
         </nav>
     </header>
 
-    <section id="home" class="section home-section">
-        <img src="perfil.jpeg" alt="Foto de perfil de Érike Augusto de Sousa Resende" class="profile-pic">
-        <h1>Érike Augusto de Sousa Resende</h1>
-        <p class="subtitle" id="typing-text" aria-live="polite"></p>
-    </section>
+    <main>
+        <section id="home" class="section home-section">
+            <img src="perfil.jpeg" alt="Foto de Érike Augusto de Sousa Resende" class="profile-pic">
+            <h1>Érike Augusto de Sousa Resende</h1>
+            <p class="subtitle" id="typing-text" aria-live="polite"></p>
+        </section>
 
-    <section id="about" class="section section-background">
-        <h2>Sobre Mim</h2>
-        <p>Formado em Educação Física e atualmente cursando Análise e Desenvolvimento de Sistemas. Meu objetivo é unir minhas habilidades técnicas com um enfoque na experiência do usuário para criar soluções inovadoras e de alta qualidade.</p>
-    </section>
+        <section id="about" class="section section-background">
+            <h2>Sobre Mim</h2>
+            <p>Formado em Educação Física e atualmente cursando Análise e Desenvolvimento de Sistemas. Meu objetivo é unir minhas habilidades técnicas com um enfoque na experiência do usuário para criar soluções inovadoras e de alta qualidade.</p>
+        </section>
 
-    <section id="experience" class="section section-background">
-        <h2>Experiência Profissional</h2>
-        <div class="experience-item">
-            <h3>Técnico de Suporte de TI N1</h3>
-            <p class="experience-date">Novembro de 2024 - Presente</p>
-            <ul>
-                <li>Instalação e configuração de hardware/software.</li>
-                <li>Suporte técnico ao usuário final e resolução de problemas.</li>
-            </ul>
-        </div>
-    </section>
+        <section id="experience" class="section section-background">
+            <h2>Experiência Profissional</h2>
+            <div class="experience-item">
+                <h3>Técnico de Suporte de TI N1</h3>
+                <p class="experience-date">Novembro de 2024 - Presente</p>
+                <ul>
+                    <li>Instalação e configuração de hardware/software.</li>
+                    <li>Suporte técnico ao usuário final e resolução de problemas.</li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="projects" class="section-projetos">
-        <h2>Projetos</h2>
-        <div class="carousel-container">
-            <div class="carousel-item active">
-                <h3>Controle de Estoque - ESTOQUEI</h3>
-                <video class="video-responsive" controls>
-                    <source src="estoquei_video.mp4" type="video/mp4">
-                    Seu navegador não suporta o formato de vídeo.
-                </video>
-                <p>Sistema de gestão de estoque em Python e SQLite.</p>
+        <section id="projects" class="section-projetos">
+            <h2>Projetos</h2>
+            <div class="carousel-container">
+                <div class="carousel-item active">
+                    <h3>Controle de Estoque - ESTOQUEI</h3>
+                    <video class="video-responsive" controls>
+                        <source src="estoquei_video.mp4" type="video/mp4">
+                        Vídeo não suportado pelo navegador.
+                    </video>
+                    <p>Sistema de gestão de estoque em Python e SQLite.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Controle de Clínica - MEDIQUEI</h3>
+                    <video class="video-responsive" controls>
+                        <source src="mediquei_video.mp4" type="video/mp4">
+                        Vídeo não suportado pelo navegador.
+                    </video>
+                    <p>Sistema de gestão de clínicas médicas em Python e PostgreSQL.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Aplicativo de Entregas - CorreAqui</h3>
+                    <img src="correaqui.png" alt="Mockup do aplicativo CorreAqui" class="carousel-image">
+                    <p>Design Figma para aplicativo de entregas.</p>
+                </div>
+                <div class="carousel-item">
+                    <h3>Aplicativo de Treino - TreineiPro</h3>
+                    <img src="treinei.png" alt="Mockup do aplicativo TreineiPro" class="carousel-image">
+                    <p>Design Figma para aplicativo de treinos.</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <h3>Controle de Clínica - MEDIQUEI</h3>
-                <video class="video-responsive" controls>
-                    <source src="mediquei_video.mp4" type="video/mp4">
-                    Seu navegador não suporta o formato de vídeo.
-                </video>
-                <p>Sistema de gestão de clínicas médicas em Python e PostgreSQL.</p>
+            <div class="carousel-controls">
+                <button class="carousel-button carousel-button-prev" aria-label="Projeto anterior">Anterior</button>
+                <button class="carousel-button carousel-button-next" aria-label="Próximo projeto">Próximo</button>
             </div>
-            <div class="carousel-item">
-                <h3>Aplicativo de Entregas - CorreAqui</h3>
-                <img src="correaqui.png" alt="Design Figma para aplicativo de entregas" class="figma-responsive">
-                <p>Design Figma para aplicativo de entregas.</p>
-            </div>  
-            <div class="carousel-item">
-                <h3>Aplicativo de Treino - TreineiPro</h3>
-                <img src="treinei.png" alt="Design Figma para aplicativo de treinos" class="treinei-responsive">
-                <p>Design Figma para aplicativo de treinos.</p>
-            </div>  
-        </div>
-        <div class="carousel-controls">
-            <button class="carousel-button carousel-button-prev" aria-label="Ir para o projeto anterior">Anterior</button>
-            <button class="carousel-button carousel-button-next" aria-label="Ir para o próximo projeto">Próximo</button>
-        </div>        
-    </section>
+        </section>
 
-    <section id="contact" class="section section-background">
-        <h2>Contato</h2>
-        <form action="mailto:erike2000augusto@gmail.com" method="post" enctype="text/plain">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Seu email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        <section id="contact" class="section section-background">
+            <h2>Contato</h2>
+            <form action="mailto:erike2000augusto@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Érike Augusto de Sousa Resende. Todos os direitos reservados.</p>
         <div class="social-links">
-            <a href="https://wa.me/5531998991686?text=Ol%C3%A1,%20tudo%20bem?" target="_blank" aria-label="Whatsapp">
-                <img src="whatsapp-icon.svg" alt="Ícone do Whatsapp">
+            <a href="https://wa.me/5531998991686?text=Ol%C3%A1,%20tudo%20bem?" target="_blank" aria-label="WhatsApp">
+                <img src="whatsapp-icon.svg" alt="Ícone do WhatsApp">
             </a>
             <a href="https://www.linkedin.com/in/erikeresende/" target="_blank" aria-label="LinkedIn">
                 <img src="linkedin-icon.svg" alt="Ícone do LinkedIn">
@@ -124,7 +126,7 @@
             </a>
         </div>
     </footer>
-    
+
     <script async src="script.js"></script>
 </body>
 </html>
