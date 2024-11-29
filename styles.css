@@ -401,18 +401,6 @@ footer {
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-
-/* .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px); /* Move o texto levemente para baixo */
-    transition: opacity 1.0s ease, transform 1.0s ease;
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0); /* Retorna à posição original */
-} */
-
 /* Seção de experiência */
 .section-background {
     max-width: 100%;
@@ -487,3 +475,10 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 768px) {
+    /* Para dispositivos móveis, garanta que o carrossel mostre apenas 1 item */
+    .carousel-container {
+        overflow-x: scroll; /* Permite rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Garante que a rolagem seja controlada */
+    }
