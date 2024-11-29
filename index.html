@@ -255,28 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .carousel-image, .video-responsive {
-    max-width: 100%;
+    max-width: 80%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
     height: auto;
+    margin: 0 auto; /* Centraliza a imagem dentro do carrossel */
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transform: translateY(-50%);
-}
-
-.carousel-button-prev {
-    left: 10px;
-}
-
-.carousel-button-next {
-    right: 10px;
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .carousel-image, .video-responsive {
+        max-width: 90%; /* Para telas menores, a imagem pode ocupar 90% do tamanho */
+    }
 }
 
 /* Deslizar Manualmente */
@@ -289,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
         max-width: 100%;
     }
 }
+
 
     </style>
 <body>
