@@ -493,7 +493,7 @@ footer {
 
 .project-link {
     position: absolute;
-    bottom: 2px; /* Distância do botão em relação à parte inferior do vídeo */
+    bottom: 5px; /* Distância do botão em relação à parte inferior do vídeo */
     left: 50%;
     transform: translateX(-75%);
     padding: 10px 20px;
