@@ -544,7 +544,7 @@ footer {
     align-items: center; /* Centraliza verticalmente */
     left: 50%;
     font-family: 'Courier New', monospace; /* Fonte monoespaçada para dar um toque hacker */
-    font-size: 1.1rem; /* Tamanho da fonte ajustado */
+    font-size: 1.0rem; /* Tamanho da fonte ajustado */
     padding: 10px 20px; /* Aumento do padding para dar mais espaço interno */
     border: 2px solid #00ff00; /* Borda verde */
     border-radius: 3px;
