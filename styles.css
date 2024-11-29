@@ -403,7 +403,7 @@ footer {
 }
 
 
-.animate-on-scroll {
+/* .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px); /* Move o texto levemente para baixo */
     transition: opacity 1.0s ease, transform 1.0s ease;
@@ -412,7 +412,7 @@ footer {
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0); /* Retorna à posição original */
-}
+} */
 
 /* Seção de experiência */
 .section-background {
