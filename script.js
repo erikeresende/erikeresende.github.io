@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "Aplicativo de Entregas - CorreAqui",
             imageSrc: "correaqui.png",
             description: "Design Figma para aplicativo de entregas.",
-            link: "https://www.figma.com/proto/tlLZkDkfo5rk3NEl2eYKGG/CorreAqui?node-id=2016-590&node-type=frame&t=ybGxXsxmfUeAt3Q6-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1"
+            link: "https://www.figma.com/proto/tlLZkDkfo5rk3NEl2eYKGG/CorreAqui?node-id=2016-590"
         },
         {
             title: "Aplicativo de Treino - TreineiPro",
             imageSrc: "treinei.png",
             description: "Design Figma para aplicativo de treinos.",
-            link: "https://www.figma.com/proto/v9ngoVjcMphlIDFJjsHKI4/Treinei-Pro?node-id=66-26&node-type=canvas&t=Xbw7xMroc1KrSNdk-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=67%3A34"
+            link: "https://www.figma.com/proto/v9ngoVjcMphlIDFJjsHKI4/Treinei-Pro"
         }
     ];
 
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                </video>`
             : `<img src="${project.imageSrc}" alt="${project.title}" class="carousel-image">`;
 
-        // Atualiza o conteúdo do carrossel para exibir apenas um projeto
+        // Atualiza o conteúdo do carrossel
         carouselContainer.innerHTML = `
             <div class="carousel-item active">
                 <h3>${project.title}</h3>
@@ -118,8 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
 
-    hamburger.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
 });
