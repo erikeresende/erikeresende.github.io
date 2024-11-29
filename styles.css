@@ -16,7 +16,7 @@ body {
     background-color: #121212;
     color: #E0E0E0;
     line-height: 1.6;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a {
@@ -30,6 +30,13 @@ a:hover,
 a:focus {
     color: #00FF00; /* Verde de hacker */
 }
+
+a:focus,
+button:focus {
+    outline: 2px solid #00FF00; /* Verde de hacker */
+    outline-offset: 2px;
+}
+
 
 h1, h2, h3 {
     font-weight: 600;
@@ -110,13 +117,14 @@ nav a:focus {
 }
 
 @keyframes blink {
-    from, to {
+    0%, 100% {
         border-color: transparent;
     }
     50% {
-        border-color: #00FF00;
+        border-color: var(--primary-color);
     }
 }
+
 
 .visible {
     opacity: 1;
@@ -170,6 +178,7 @@ h2 {
     justify-content: center;
     gap: 2rem;
     overflow: hidden;
+    max-width: 100%; /* Adicionado para limitar o tamanho */
     position: relative;
 }
 
@@ -219,6 +228,12 @@ h2 {
     z-index: 10;
 }
 
+.carousel-button:hover,
+.carousel-button:active {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
 .section-projetos {
     display: flex;
     flex-direction: column;
@@ -263,13 +278,12 @@ h2 {
 
 .carousel-item video,
 .carousel-item img {
-    max-width: 90%;
-    width: 1000px;
-    height: 1000px;
-    max-height: 90%;
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     object-fit: cover;
 }
+
 
 /* Contato */
 form input,
@@ -357,5 +371,120 @@ footer {
 
     .social-links {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .carousel-item {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+}
+
+
+:root {
+    --primary-color: #00FF00;
+    --secondary-color: #E0E0E0;
+    --bg-color: #121212;
+    --hover-bg: #ffffff;
+    --hover-text: #121212;
+    --radius: 8px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Move o texto levemente para baixo */
+    transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0); /* Retorna à posição original */
+}
+
+/* Seção de experiência */
+.section-background {
+    max-width: 100%;
+    margin: 50px auto;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.section-background h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.experience-item {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: #00FF00;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.experience-item ul li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+.experience-item ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+    color: #00FF00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-background {
+        padding: 30px 10px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .experience-item ul li {
+        font-size: 0.9rem;
     }
 }
