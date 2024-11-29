@@ -135,6 +135,53 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 1;
             transform: translateY(0); /* Retorna à posição original */
         }
+        /* Estilo do Carrossel */
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image, .video-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+    }
+}
     </style>
 <body>
     <header>
@@ -241,60 +288,77 @@ document.addEventListener("DOMContentLoaded", function () {
     </footer>
     <script>
         // --- Funções do Carrossel ---
-    let currentIndex = 0;
-    const projects = [
-        {
-            title: "Controle de Estoque - ESTOQUEI",
-            videoSrc: "estoquei_video.mp4",
-            description: "Sistema de gestão de estoque em Python e SQLite.",
-            link: "https://github.com/erikeresende/estoquei"
-        },
-        {
-            title: "Controle de Clínica - MEDIQUEI",
-            videoSrc: "mediquei_video.mp4",
-            description: "Gestão de clínicas médicas em Python e PostgreSQL.",
-            link: "https://github.com/erikeresende/mediquei"
-        },
-        {
-            title: "Aplicativo de Entregas - CorreAqui",
-            imageSrc: "correaqui.png",
-            description: "Design Figma para aplicativo de entregas.",
-            link: "https://www.figma.com/proto/tlLZkDkfo5rk3NEl2eYKGG/CorreAqui"
-        },
-        {
-            title: "Aplicativo de Treino - TreineiPro",
-            imageSrc: "treinei.png",
-            description: "Design Figma para aplicativo de treinos.",
-            link: "https://www.figma.com/proto/v9ngoVjcMphlIDFJjsHKI4/Treinei-Pro"
-        }
-    ];
+// --- Funções do Carrossel ---
+let currentIndex = 0;
+const projects = [
+    {
+        title: "Controle de Estoque - ESTOQUEI",
+        videoSrc: "estoquei_video.mp4",
+        description: "Sistema de gestão de estoque em Python e SQLite.",
+        link: "https://github.com/erikeresende/estoquei"
+    },
+    {
+        title: "Controle de Clínica - MEDIQUEI",
+        videoSrc: "mediquei_video.mp4",
+        description: "Gestão de clínicas médicas em Python e PostgreSQL.",
+        link: "https://github.com/erikeresende/mediquei"
+    },
+    {
+        title: "Aplicativo de Entregas - CorreAqui",
+        imageSrc: "correaqui.png",
+        description: "Design Figma para aplicativo de entregas.",
+        link: "https://www.figma.com/proto/tlLZkDkfo5rk3NEl2eYKGG/CorreAqui"
+    },
+    {
+        title: "Aplicativo de Treino - TreineiPro",
+        imageSrc: "treinei.png",
+        description: "Design Figma para aplicativo de treinos.",
+        link: "https://www.figma.com/proto/v9ngoVjcMphlIDFJjsHKI4/Treinei-Pro"
+    }
+];
 
-    function renderProjectCarousel() {
-        const carouselContainer = document.querySelector('.carousel-container');
-        if (!carouselContainer) return;
+function renderProjectCarousel() {
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (!carouselContainer) return;
 
-        const project = projects[currentIndex];
-        const mediaContent = project.videoSrc
-            ? `<video controls>
-                    <source src="${project.videoSrc}" type="video/mp4">
-                    Seu navegador não suporta a tag de vídeo.
-               </video>`
-            : `<img src="${project.imageSrc}" alt="${project.title}" class="carousel-image">`;
+    const project = projects[currentIndex];
+    const mediaContent = project.videoSrc
+        ? `<video controls class="video-responsive">
+                <source src="${project.videoSrc}" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+           </video>`
+        : `<img src="${project.imageSrc}" alt="${project.title}" class="carousel-image">`;
 
-        carouselContainer.innerHTML = `
-            <div class="carousel-item active">
-                <h3>${project.title}</h3>
-                ${mediaContent}
-                <p>${project.description}</p>
-                <a href="${project.link}" target="_blank" class="project-link">Acessar Projeto</a>
-            </div>
-        `;
+    carouselContainer.innerHTML = `
+        <div class="carousel-item active">
+            <h3>${project.title}</h3>
+            ${mediaContent}
+            <p>${project.description}</p>
+            <a href="${project.link}" target="_blank" class="project-link">Acessar Projeto</a>
+        </div>
+    `;
+}
+
+function changeCarouselIndex(direction) {
+    currentIndex = (currentIndex + direction + projects.length) % projects.length;
+    renderProjectCarousel();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderProjectCarousel();
+
+    const nextButton = document.querySelector(".carousel-button-next");
+    const prevButton = document.querySelector(".carousel-button-prev");
+
+    if (nextButton) {
+        nextButton.addEventListener('click', () => changeCarouselIndex(1));
     }
 
-    function changeCarouselIndex(direction) {
-        currentIndex = (currentIndex + direction + projects.length) % projects.length;
-        renderProjectCarousel();
+    if (prevButton) {
+        prevButton.addEventListener('click', () => changeCarouselIndex(-1));
     }
+});
+
 <script>
     <script async src="script.js"></script>
 </body>
