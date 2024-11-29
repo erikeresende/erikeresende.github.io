@@ -8,7 +8,7 @@
     <meta name="keywords" content="portfólio, desenvolvedor, frontend, full stack, Python, JavaScript, HTML, CSS, projetos">
     <title>Portfólio Pessoal - Érike Augusto de Sousa Resende</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Portfólio de Érike Augusto de Sousa Resende">
     <meta property="og:description" content="Portfólio de Érike Augusto, desenvolvedor Full Stack. Veja os meus projetos e experiências profissionais.">
@@ -23,11 +23,11 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
+            <ul class="nav-list" id="nav-list" role="menu">
+                <li role="menuitem"><a href="#home">Home</a></li>
+                <li role="menuitem"><a href="#about">Sobre</a></li>
+                <li role="menuitem"><a href="#projects">Projetos</a></li>
+                <li role="menuitem"><a href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -35,27 +35,31 @@
     <section id="home" class="section home-section">
         <img src="perfil.jpeg" alt="Foto de perfil de Érike Augusto de Sousa Resende" class="profile-pic">
         <h1>Érike Augusto de Sousa Resende</h1>
-        <p class="subtitle" id="typing-text" aria-live="polite"></p>
+        <p class="subtitle" id="typing-text"></p>
     </section>
 
-    <section id="about" class="section section-background">
+    <section id="about" class="section section-background animate-on-scroll">
         <h2>Sobre Mim</h2>
         <p>Formado em Educação Física e atualmente cursando Análise e Desenvolvimento de Sistemas. Meu objetivo é unir minhas habilidades técnicas com um enfoque na experiência do usuário para criar soluções inovadoras e de alta qualidade.</p>
     </section>
 
-    <section id="experience" class="section section-background">
+    <section id="experience" class="section section-background animate-on-scroll">
         <h2>Experiência Profissional</h2>
         <div class="experience-item">
             <h3>Técnico de Suporte de TI N1</h3>
             <p class="experience-date">Novembro de 2024 - Presente</p>
             <ul>
-                <li>Instalação e configuração de hardware/software.</li>
-                <li>Suporte técnico ao usuário final e resolução de problemas.</li>
+                <li>Realizar a instalação, configuração e manutenção de hardware e software em estações de trabalho.</li>
+                <li>Diagnosticar e resolver problemas técnicos relacionados a sistemas operacionais, aplicativos e redes.</li>
+                <li>Fornecer suporte técnico remoto e presencial ao usuário final, fornecendo soluções eficazes e eficientes.</li>
+                <li>Realizar atualizações de sistemas e equipamentos.</li>
+                <li>Gerenciar e monitorar a rede local, incluindo a configuração de roteadores e switches.</li>
+                <li>Manter documentação precisa e atualizada sobre configurações de sistemas e processos de suporte.</li>
             </ul>
         </div>
-    </section>
+    </section>    
 
-    <section id="projects" class="section-projetos">
+    <section id="projects" class="section-projetos animate-on-scroll">
         <h2>Projetos</h2>
         <div class="carousel-container">
             <div class="carousel-item active">
@@ -74,26 +78,16 @@
                 </video>
                 <p>Sistema de gestão de clínicas médicas em Python e PostgreSQL.</p>
             </div>
-            <div class="carousel-item">
-                <h3>Aplicativo de Entregas - CorreAqui</h3>
-                <img src="correaqui.png" alt="Design Figma para aplicativo de entregas" class="figma-responsive">
-                <p>Design Figma para aplicativo de entregas.</p>
-            </div>  
-            <div class="carousel-item">
-                <h3>Aplicativo de Treino - TreineiPro</h3>
-                <img src="treinei.png" alt="Design Figma para aplicativo de treinos" class="treinei-responsive">
-                <p>Design Figma para aplicativo de treinos.</p>
-            </div>  
         </div>
         <div class="carousel-controls">
             <button class="carousel-button carousel-button-prev" aria-label="Ir para o projeto anterior">Anterior</button>
             <button class="carousel-button carousel-button-next" aria-label="Ir para o próximo projeto">Próximo</button>
-        </div>        
+        </div>
     </section>
 
-    <section id="contact" class="section section-background">
+    <section id="contact" class="section section-background animate-on-scroll">
         <h2>Contato</h2>
-        <form action="mailto:erike2000augusto@gmail.com" method="post" enctype="text/plain">
+        <form action="mailto:erike2000augusto@gmail.com" method="post" enctype="application/x-www-form-urlencoded">
             <div class="form-group">
                 <label for="name">Nome</label>
                 <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -125,6 +119,6 @@
         </div>
     </footer>
     
-    <script async src="script.js"></script>
+    <script async src="script.js?v=1.0"></script>
 </body>
 </html>
