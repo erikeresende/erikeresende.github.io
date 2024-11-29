@@ -541,6 +541,8 @@ footer {
             width: 100px; /* Largura personalizada */
             height: 10px;
             bottom: 50px; /* Distância do botão em relação à parte inferior do vídeo */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
             left: 50%;
             font-family: 'Courier New', monospace; /* Fonte monoespaçada para dar um toque hacker */
             font-size: 3px;
