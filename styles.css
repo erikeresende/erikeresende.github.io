@@ -495,7 +495,7 @@ footer {
     position: absolute;
     bottom: 0px; /* Distância do botão em relação à parte inferior do vídeo */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-35%);
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
