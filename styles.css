@@ -493,7 +493,7 @@ footer {
 }
 
 .carousel-image, .video-responsive {
-    max-width: 80%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
+    max-width: 90%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
     height: auto;
     margin: 0 auto; /* Centraliza a imagem dentro do carrossel */
 }
@@ -512,7 +512,7 @@ footer {
 
 @media (max-width: 768px) {
     .carousel-container {
-        max-width: 100%;
+        max-width: 90%;
     }
 }
 
