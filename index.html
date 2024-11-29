@@ -287,9 +287,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
     <script>
-        // --- Funções do Carrossel ---
 // --- Funções do Carrossel ---
 let currentIndex = 0;
+let isMouseDown = false;
+let startX;
+let scrollLeft;
 const projects = [
     {
         title: "Controle de Estoque - ESTOQUEI",
@@ -317,6 +319,7 @@ const projects = [
     }
 ];
 
+// Função para renderizar o carrossel
 function renderProjectCarousel() {
     const carouselContainer = document.querySelector('.carousel-container');
     if (!carouselContainer) return;
@@ -339,24 +342,52 @@ function renderProjectCarousel() {
     `;
 }
 
+// Função para mudar o índice do carrossel
 function changeCarouselIndex(direction) {
     currentIndex = (currentIndex + direction + projects.length) % projects.length;
     renderProjectCarousel();
 }
 
+// Deslizar automático (intervalo)
+let autoSlideInterval = setInterval(() => {
+    changeCarouselIndex(1);
+}, 5000); // Troca de slide a cada 5 segundos
+
+// Função para começar o arrasto
+const carouselContainer = document.querySelector('.carousel-container');
+carouselContainer.addEventListener('mousedown', (e) => {
+    isMouseDown = true;
+    startX = e.pageX - carouselContainer.offsetLeft;
+    scrollLeft = carouselContainer.scrollLeft;
+    carouselContainer.style.cursor = 'grabbing'; // Cursor de arraste
+});
+
+// Função para parar o arrasto
+carouselContainer.addEventListener('mouseleave', () => {
+    isMouseDown = false;
+    carouselContainer.style.cursor = 'grab'; // Cursor normal
+});
+
+// Função para realizar o arrasto
+carouselContainer.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    e.preventDefault();
+    const x = e.pageX - carouselContainer.offsetLeft;
+    const walk = (x - startX) * 3; // Multiplicador de velocidade de deslize
+    carouselContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Função para reiniciar o carrossel (se estiver fora da área visível)
+carouselContainer.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    carouselContainer.style.cursor = 'grab'; // Cursor normal
+    if (carouselContainer.scrollLeft >= carouselContainer.scrollWidth - carouselContainer.offsetWidth) {
+        carouselContainer.scrollLeft = 0; // Reinicia quando chega ao fim
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     renderProjectCarousel();
-
-    const nextButton = document.querySelector(".carousel-button-next");
-    const prevButton = document.querySelector(".carousel-button-prev");
-
-    if (nextButton) {
-        nextButton.addEventListener('click', () => changeCarouselIndex(1));
-    }
-
-    if (prevButton) {
-        prevButton.addEventListener('click', () => changeCarouselIndex(-1));
-    }
 });
 
 <script>
