@@ -109,7 +109,6 @@ nav a:focus {
 
 #typing-text {
     font-size: 1.5em;
-    white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid black; /* Barra de digitação */
     display: inline-block; /* Garante alinhamento correto */
