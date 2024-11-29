@@ -135,22 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 1;
             transform: translateY(0); /* Retorna à posição original */
         }
-        @media (max-width: 768px) {
-    /* Para dispositivos móveis, garanta que o carrossel mostre apenas 1 item */
-    .carousel-container {
-        overflow-x: scroll; /* Permite rolagem horizontal */
-        scroll-snap-type: x mandatory; /* Garante que a rolagem seja controlada */
-    }
-
-    .carousel-item {
-        flex: 0 0 100%; /* Cada item ocupa 100% da largura */
-        scroll-snap-align: center; /* Garante que o item centralize na tela */
-    }
-
-    .carousel-controls {
-        display: none; /* Oculta os controles do carrossel em telas pequenas */
-    }
-}
     </style>
 <body>
     <header>
