@@ -538,6 +538,8 @@ footer {
         .project-link {
             background: linear-gradient(45deg, #0f0, #00ff00); /* Gradiente verde, típico de temas hacker */
             color: black;
+            bottom: 50px; /* Distância do botão em relação à parte inferior do vídeo */
+            left: 50%;
             font-family: 'Courier New', monospace; /* Fonte monoespaçada para dar um toque hacker */
             font-size: 18px;
             padding: 15px 30px;
