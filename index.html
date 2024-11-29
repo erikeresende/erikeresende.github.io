@@ -249,10 +249,32 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto do botão */
     flex: 0 0 100%;
     box-sizing: border-box;
     transition: transform 0.5s ease;
 }
+
+.project-link {
+    position: absolute;
+    top: 10px; /* Distância do topo do item */
+    left: 50%;
+    transform: translateX(-50%); /* Para centralizar horizontalmente */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1; /* Garante que o botão fique acima da mídia */
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Muda a cor ao passar o mouse */
+}
+
 
 .carousel-image, .video-responsive {
     max-width: 80%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
