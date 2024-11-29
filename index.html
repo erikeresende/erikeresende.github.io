@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
             opacity: 1;
             transform: translateY(0); /* Retorna à posição original */
         }
-        /* Estilo do Carrossel */
+       /* Estilo do Carrossel */
 .carousel-container {
     display: flex;
     overflow: hidden;
@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     align-items: center;
     position: relative;
     width: 100%;
+    cursor: grab; /* Indica que o carrossel pode ser arrastado */
 }
 
 .carousel-item {
@@ -156,25 +157,29 @@ document.addEventListener("DOMContentLoaded", function () {
     height: auto;
 }
 
-.carousel-controls {
+.carousel-button {
     position: absolute;
     top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.carousel-button {
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
+    transform: translateY(-50%);
 }
 
-.carousel-button:focus {
-    outline: none;
+.carousel-button-prev {
+    left: 10px;
+}
+
+.carousel-button-next {
+    right: 10px;
+}
+
+/* Deslizar Manualmente */
+.carousel-container:active {
+    cursor: grabbing; /* Muda o cursor quando o carrossel está sendo arrastado */
 }
 
 @media (max-width: 768px) {
@@ -182,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
         max-width: 100%;
     }
 }
+
     </style>
 <body>
     <header>
