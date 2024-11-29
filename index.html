@@ -15,6 +15,24 @@
     <meta property="og:image" content="perfil.jpeg">
     <meta property="og:url" content="https://erikeresende.github.io">
 </head>
+<script>
+    // Função para verificar se o elemento está visível na tela
+    function checkVisibility() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                element.classList.add('visible'); // Adiciona a classe 'visible' quando o elemento aparece
+            }
+        });
+    }
+
+    // Chama a função ao rolar a página
+    window.addEventListener('scroll', checkVisibility);
+
+    // Chama a função para garantir que elementos visíveis já apareçam imediatamente
+    checkVisibility();
+</script>
     <style>
         .animate-on-scroll {
             opacity: 0;
@@ -130,24 +148,6 @@
             </a>
         </div>
     </footer>
-<script>
-    // Função para verificar se o elemento está visível na tela
-    function checkVisibility() {
-        const elements = document.querySelectorAll('.animate-on-scroll');
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                element.classList.add('visible'); // Adiciona a classe 'visible' quando o elemento aparece
-            }
-        });
-    }
-
-    // Chama a função ao rolar a página
-    window.addEventListener('scroll', checkVisibility);
-
-    // Chama a função para garantir que elementos visíveis já apareçam imediatamente
-    checkVisibility();
-</script>
     <script async src="script.js"></script>
 </body>
 </html>
