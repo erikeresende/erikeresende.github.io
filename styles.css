@@ -482,7 +482,7 @@ footer {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 70%;
+    width: 100%;
     cursor: grab; /* Indica que o carrossel pode ser arrastado */
 }
 
@@ -493,7 +493,7 @@ footer {
 }
 
 .carousel-image, .video-responsive {
-    max-width: 70%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
+    max-width: 80%; /* Define um tamanho máximo para as imagens (80% da largura do container) */
     height: auto;
     margin: 0 auto; /* Centraliza a imagem dentro do carrossel */
 }
@@ -512,9 +512,10 @@ footer {
 
 @media (max-width: 768px) {
     .carousel-container {
-        max-width: 90%;
+        max-width: 100%;
     }
 }
+
 
 
 
