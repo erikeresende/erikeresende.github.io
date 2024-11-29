@@ -476,3 +476,56 @@ footer {
     }
 }
 
+/* Estilo do Carrossel */
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    cursor: grab; /* Indica que o carrossel pode ser arrastado */
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image, .video-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.carousel-button-prev {
+    left: 10px;
+}
+
+.carousel-button-next {
+    right: 10px;
+}
+
+/* Deslizar Manualmente */
+.carousel-container:active {
+    cursor: grabbing; /* Muda o cursor quando o carrossel está sendo arrastado */
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+    }
+}
+
